@@ -24,6 +24,10 @@ HunterGate(
 
 project(cmake_hunter_seed)
 
+
+find_package(Boost 1.74 COMPONENTS serialization log REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+
 if(NOT EXISTS "${CMAKE_TOOLCHAIN_FILE}")
   # https://cgold.readthedocs.io/en/latest/tutorials/toolchain/globals/cxx-standard.html#summary
   set(CMAKE_CXX_STANDARD 17)
@@ -96,8 +100,6 @@ endif()
 if(CLANG_FORMAT)
   include(cmake/clang-format.cmake)
 endif()
-
-
 
 add_subdirectory(src)
 
