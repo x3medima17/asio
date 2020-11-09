@@ -1,2 +1,1 @@
-# cmake-hunter-seed
-Seed project for C++ projects
+# Dual connection Proof of Concept
